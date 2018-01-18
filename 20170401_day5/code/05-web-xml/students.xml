@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student id="01">
+		<name>Tom</name>
+		<age>18</age>
+		<gender>male</gender>
+		<!-- <desc>此人<20岁</desc> -->
+		<!-- <desc>此人&lt;20岁</desc> -->
+		<desc><![CDATA[此人<20岁]]></desc>
+	</student>
+	<student id="02">
+		<name>Lucy</name>
+		<age>20</age>
+		<gender>female</gender>
+		<desc>此人正好20岁</desc>
+	</student>
+	<!-- <01student> -->
+	<!-- <STUDENT></STUDENT> -->
+	<!-- <STUDENT/> -->
+</students>
+<!-- <students></students> -->

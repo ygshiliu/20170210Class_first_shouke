@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS基本语法</title>
+<!-- 第2种方式：通常定义在style标签中 -->
+<style type="text/css">
+	p{
+		font-size:50px;
+	}
+</style>
+<!-- 第3种方式：通过link标签引入一个外部的css文件 -->
+<!-- href属性用来指定外部css文件的路径 -->
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	
+	<!-- 第1种方式：可以直接写在html标签的style属性中 -->
+	<!-- 不推荐，因为html与css耦合 -->
+	<p style="color:red;">落霞与孤鹜齐飞，秋水共长天一色</p>
+	<p>落霞与孤鹜齐飞，秋水共长天一色</p>
+	
+</body>
+</html>

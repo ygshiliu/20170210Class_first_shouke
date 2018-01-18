@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JS中的函数</title>
+<script type="text/javascript">
+	
+	//在js中一切皆对象，函数也是对象
+	//01.声明函数
+	//声明函数使用关键字function
+	//不需要指定函数参数的类型
+	//匿名函数
+	var fun01 = function(num1,num2){
+		return num1+num2;
+	}
+	
+	//命名函数
+	function fun02(num1,num2){
+		return num1*num2;
+	}
+	//02.调用函数
+	//调用函数的本质：函数的引用+()
+	//在js中不会对参数类型与个数进行检查，也就是说在js中没有重载一说
+	var sum = fun01(4,6);
+	sum = fun02(4,6);
+	sum = fun01(4,6,7);
+	sum = fun01("12","sd");
+	sum = fun02("12","sd");
+	sum = fun01("12");
+	alert(sum);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

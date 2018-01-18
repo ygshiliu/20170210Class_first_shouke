@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	#areaDiv {
+		border: 1px solid black;
+		width: 300px;
+		height: 50px;
+		margin-bottom: 10px;
+	}
+	
+	#showMsg {
+		border: 1px solid black;
+		width: 300px;
+		height: 20px;
+	}
+
+</style>
+<script type="text/javascript">
+
+	window.onload = function(){
+		//获取大div
+		var big = document.getElementById("areaDiv");
+		//给大div绑定鼠标移动事件，获取鼠标坐标
+		//当回调函数被调用时，浏览器会给这个回调函数传一个事件对象
+		//事件对象里就包含对鼠标或键盘等信息
+		big.onmousemove = function(event){
+			
+			/* if(!event){
+				event = window.event;
+			} */
+			
+			event = event || window.event;
+			
+			var x = event.clientX;
+			var y = event.clientY;
+			
+			//获取小div,将鼠标坐标显示小div中
+			var small = document.getElementById("showMsg");
+			small.innerHTML = "x="+x+";Y="+y;
+		}
+	}
+
+</script>
+</head>
+<body>
+
+	<div id="areaDiv"></div>
+	<div id="showMsg"></div>
+
+</body>
+</html>

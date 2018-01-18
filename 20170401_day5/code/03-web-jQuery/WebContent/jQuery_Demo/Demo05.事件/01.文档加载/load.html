@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+
+	//$(function()) 和  window.onload = function(){}的区别
+/* 	window.onload = function(){
+		//alert()是在iframe标签加载网页完成之后才会被调用
+		alert("asdf");
+	} */
+	
+	/* 
+	$(function(){})的执行时机是在当前页面加载完成之后立刻被执行 
+	执行时机比window.onload快一点
+	*/
+	$(function(){
+		alert("通过jQuery实现");
+	})
+
+</script>
+</head>
+<body>
+	<!-- 功能：向当前页面引入另一张页面 -->
+	<iframe src="http://www.baidu.com"></iframe>
+
+</body>
+</html>

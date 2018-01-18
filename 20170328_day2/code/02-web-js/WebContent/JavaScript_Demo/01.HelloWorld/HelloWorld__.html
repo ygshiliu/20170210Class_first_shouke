@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HelloWorld</title>
+<!-- js代码通常写script标签 -->
+<!-- type属性是一个固定值，是一个MIME值  -->
+<script type="text/javascript">
+	
+	//alert()用来弹出带有一段信息的对话框
+	//在js中一切皆对象
+	/* 
+		window是一个对象
+		onload是window对象的属性
+		var btn用来声明一个变量
+		document是一个对象
+		getElementById()是document对象的方法
+		onclick是元素的属性
+	
+	*/
+ 	window.onload=function(){
+		//获取按钮
+		var btn = document.getElementById("btn");
+		//给按钮绑定属性
+		btn.onclick = function(){
+			alert("我会js操作了！");
+		}
+	} 
+
+</script>
+<!-- 第2种实现js代码的方式 -->	
+<!-- src属性用来引入 外部的js文件 -->
+<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<button id="btn">SayHello</button>
+
+</body>
+</html>

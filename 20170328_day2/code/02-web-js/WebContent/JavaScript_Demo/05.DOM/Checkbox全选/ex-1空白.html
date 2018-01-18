@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>全选练习</title>
+<script type="text/javascript">
+
+	/*
+	技术点：
+	1.DOM查询
+	2.事件响应函数绑定
+	3.checkbox操作
+	4.在事件响应函数中使用this关键字代表当前控件
+	5.逻辑思维能力
+	*/
+	
+	window.onload = function(){
+		//1.#checkedAllBtn
+		myClick("checkedAllBtn",function(){
+			//获取所有name=items复选框，同时设置选中状态
+			var items = document.getElementsByName("items");
+			for(var i=0;i<items.length;i++){
+				//设置复选框的状态
+				items[i].checked = true;
+			}
+			//获取全选全不选复选框，同时设置选中状态
+			var checkAll = document.getElementById("checkedAllBox");
+			checkAll.checked = true;
+		})
+		//2.#checkedNoBtn
+		myClick("checkedNoBtn",function(){
+			//获取所有name=items复选框，同时设置选中状态
+			var items = document.getElementsByName("items");
+			for(var i=0;i<items.length;i++){
+				//设置复选框的状态
+				items[i].checked = false;
+			}
+			//获取全选全不选复选框，同时设置选中状态
+			var checkAll = document.getElementById("checkedAllBox");
+			checkAll.checked = false;
+		})
+		//3.#checkedRevBtn
+		myClick("checkedRevBtn",function(){
+			//获取所有name=items复选框，同时设置选中状态
+			var items = document.getElementsByName("items");
+			
+			//定义一个计数器
+			var count = 0 ;
+			
+			//遍历复选框状态
+			for(var i=0;i<items.length;i++){
+				//获取复选框状态
+				var flag = items[i].checked;
+				if(flag){
+					items[i].checked = false;
+				}else{
+					items[i].checked = true;
+					count++;
+				}
+			}
+			
+			//获取全选全不选按钮
+			var checkAll = document.getElementById("checkedAllBox");
+			//==是比较运算，返回布尔值 
+			//=是赋值运算
+			checkAll.checked = (count==4);
+			
+		})
+		//4.#sendBtn
+		myClick("sendBtn",function(){
+			//获取所有name=items复选框，同时设置选中状态
+			var items = document.getElementsByName("items");
+			
+			for(var i=0;i<items.length;i++){
+				//设置复选框的状态
+				var flag = items[i].checked 
+				//为true说明选中，则弹出value属性值 
+				if(flag){
+					alert(items[i].value);
+				}
+			}
+			
+		})
+		//5.#checkedAllBox
+		myClick("checkedAllBox",function(){
+			//可以在函数中使用this关键字
+			//this代表当前函数所属的对象
+			//获取当前对象状态
+			var flag = this.checked;
+			
+			//获取所有name=items复选框，同时设置选中状态
+			var items = document.getElementsByName("items");
+			
+			//遍历
+			for(var i=0;i<items.length;i++){
+				//设置复选框的状态
+			    items[i].checked =flag;
+			}
+			
+		})
+		//6.items
+		//获取所有name=items复选框，同时设置选中状态
+		var items = document.getElementsByName("items");
+		//遍历
+		for(var i=0;i<items.length;i++){
+			//给每一个复选框绑定单击响应函数
+		    items[i].onclick = function(){
+				//定义一个布尔值 
+				var flag = true;
+				for(var j=0;j<items.length;j++){
+					if(!items[j].checked){
+						flag = false;
+						//假如有一个没选中，就跳出循环
+						break;
+					}
+				}
+				
+				//设置全选全不选状态
+				var checkAll = document.getElementById("checkedAllBox");
+				checkAll.checked = flag; 
+			}
+		}
+		
+	}
+	
+	function myClick(btnstr,fun){
+		var btn = document.getElementById(btnstr);
+		btn.onclick = fun;
+	}
+</script>
+</head>
+<body>
+
+	<form method="post" action="">
+		你爱好的运动是？<input type="checkbox" id="checkedAllBox" />全选/全不选 
+		
+		<br />
+		<input type="checkbox" name="items" value="足球" />足球
+		<input type="checkbox" name="items" value="篮球" />篮球
+		<input type="checkbox" name="items" value="羽毛球" />羽毛球
+		<input type="checkbox" name="items" value="乒乓球" />乒乓球
+		<br />
+		<input type="button" id="checkedAllBtn" value="全　选" />
+		<input type="button" id="checkedNoBtn" value="全不选" />
+		<input type="button" id="checkedRevBtn" value="反　选" />
+		<input type="button" id="sendBtn" value="提　交" />
+	</form>
+
+</body>
+</html>

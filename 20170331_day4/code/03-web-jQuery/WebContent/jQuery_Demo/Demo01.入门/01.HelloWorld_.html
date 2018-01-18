@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HelloWorld</title>
+<!-- 引入外部js文件，使用script标签的src属性指向外部文件的路径 -->
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	
+/* 	window.onload = function(){
+		var btn = document.getElementById("btnId");
+		btn.onclick = function(){
+			alert("使用js实现");
+		}
+	}
+ */
+ 	//$(function(){})相当于window.onload=function(){} ,作用就是在当前文档加载完成之后执行
+  	$(function(){
+ 		//$("#btnId")相当于document.getElementById("btnId");
+ 		$("#btnId").click(function(){
+ 			alert("使用jQuery实现");
+ 		})
+ 	}) 
+ 	
+</script>
+</head>
+<body>
+	<iframe src="www.baidu.com"></iframe>
+	<button id="btnId">SayHello</button>
+
+</body>
+</html>

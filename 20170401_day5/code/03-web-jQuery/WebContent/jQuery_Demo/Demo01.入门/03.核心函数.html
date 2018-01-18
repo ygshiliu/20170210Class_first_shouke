@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>核心函数</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+
+	//核心函数的4个作用
+	//jQuery核心函数会根据传入参数的不同起不同作用
+	
+	//1.传入参数为[函数]时：在文档加载完成后执行这个函数
+	$(function(){
+		//2.传入参数为[HTML字符串]时：根据这个字符串创建元素节点对象
+		var p = $("<p>柳暗花明又一村</p>");
+		//向body标签内部追加一个p标签
+		p.appendTo("body");
+		
+		//3.传入参数为[选择器字符串]时：根据这个字符串查找元素节点对象
+		// 元素选择器   : div
+		//ID选择器  :#testDiv
+		//类选择器  : .className
+		//分组选择器: div,#testDiv
+		//var $div = $("#testDiv");
+		//var div = document.getElementById("testDiv");
+		//alert($div+"--"+div);
+		
+	
+		//什么是Dom对象？
+		//通过原生js获取的对象，主要是指document对象的3个方法获取的对象
+		var div = document.getElementById("testDiv");
+		
+		//jQuery对象？
+		//就是通过核心函数获取的对象
+		var $div = $("#testDiv");
+		
+		//为什么要将js对象包装成jQuery对象？
+		//原因是jQuery对象提供了大量的方法，但是原生Dom对象不能调用
+		//传入参数为[DOM对象]时：将DOM对象包装为[jQuery对象]返回
+		var $div2 = $(div);
+		
+		
+		//jQuery对象的本质：就是一个Dom对象数组
+		//我们可以使用 对象[下标] 来获取指定位置元素
+		var div3 = $div[0];
+		alert(div+"--"+div3);
+	})
+
+</script>
+</head>
+<body>
+	
+	<div id="testDiv">Atguigu is Very Good!</div>
+	
+	<button id="dom2dom">使用DOM对象调用DOM方法</button>
+	<button id="dom2jQuery">使用DOM对象调用jQuery方法</button>
+	<button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+	<button id="jQuery2dom">使用jQuery对象调用DOM方法</button>
+	
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>表单</title>
+</head>
+<body>
+
+	<!-- 使用form标签来创建一个表单 -->
+	<!-- action属性用来指定服务器url路径 -->
+	<!-- method属性用来指明请求的提交方式，有两个值get和post，默认是get -->
+	
+	<!-- 当提交按钮后，会以如下形式发送到服务器 -->
+	<!-- target.html?name=Tom&password=123456 -->
+	<!-- 使用？来分隔url路径与请求参数 -->
+	<!-- 请求参数是一个键值对的形式，key就是我们定义的name属性，value就是用户输入值 -->
+	<!-- 多个请求参数之间使用&连接 -->
+	<form action="target.html" method="get">
+		<!-- 文本框 -->
+		<!--type="text"用来指明是一个单行文本框  -->
+		<!-- name属性是用来提供给服务器使用 -->
+		用户名：<input type="text" name="name"><br><br>
+		<!-- 密码框 -->
+		密  码：<input type="password" name="password"><br><br>
+		<!-- 单选按钮 -->
+		<!-- 单选按钮是通过name属性的值进行分组 -->
+		<!-- 像这种需要用户来指定表单项，我们是需要指定value属性值  -->
+		性别：<input type="radio" name="sex" value="male">男
+		<input type="radio" name="sex" value="female">女<br><br>
+		<!-- 复选框/多选框 -->
+		爱好 ：<input type="checkbox" name="hoddy" value="running">跑步
+			<input type="checkbox" name="hoddy" value="reading">读书
+			<input type="checkbox" name="hoddy" value="swimming">游泳<br><br>
+		<!-- 下拉列表框 -->
+		<!-- 下拉列表框与单选框和多选框一样，都需要指定name与value属性 -->
+		<!-- name属性需要指定select标签处，vaule属性需要指定option子标签处 -->
+		你喜欢语言：
+		<select name="language">
+			<option value="Java">Java</option>
+			<option value="html">Html</option>
+			<option value="c">C</option>
+			<option value="php">php</option>
+		</select><br><br>
+		<!-- 提交按钮 -->
+		<!-- value属性可以用来改变按钮的文本值 -->
+		<input type="submit" value="注册">
+	</form>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS中的对象</title>
+<script type="text/javascript">
+	//创建对象的两种方式
+	//第一种方式
+	var obj = new Object();
+	
+	//第二种方式
+	var obj02 = {};
+	
+	//动态的向对象中添加属性:对象.属性名  =  属性值 
+	
+	obj.name = "Tom";
+	obj.age = 16;
+	obj.gender = "男";
+	
+	//获取对象属性：对象.属性名
+	//alert(obj.name+"--"+obj.age+"--"+obj.gender);
+	
+	
+	//创建对象的同时定义属性
+	//这种方式来定义属性时，属性是一个键值对形式，键是指定的属性名，
+	//值可以是任意类型，键与值之间使用冒号分隔，多个属性之间使用逗号分隔
+	//注意：最后一个属性不需要加逗号
+	//与json对象很像，不同是，json对象的键是需要引号括起来:"name":"Lucy"
+	var obj3 = {
+			name:"Lucy",
+			age:29,
+			phone:"131272987"
+	}
+	
+	
+	alert(obj3.name+"--"+obj3.age+"--"+obj3.phone);
+	
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
